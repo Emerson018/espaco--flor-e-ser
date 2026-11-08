@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lotus · Massagem em Porto Alegre</title>
+  <meta name="description" content="Lotus, massagem em espaço próprio na R. Dr. Timóteo, 383, Porto Alegre. Escolha onde você sente e agende pelo WhatsApp.">
+  <meta name="theme-color" content="#2F231B">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#mapa">Pular para o mapa do corpo</a>
+
+  <header class="topbar" data-reveal-hero>
+    <a class="topbar__mark" href="#topo" aria-label="Lotus, início">
+      <svg viewBox="0 0 40 24" aria-hidden="true"><use href="#lotus-mark"/></svg>
+      <span>Lotus</span>
+    </a>
+    <nav class="topbar__nav" aria-label="Seções">
+      <a href="#mapa">Onde você sente</a>
+      <a href="#massagens">Massagens</a>
+      <a href="#espaco">O espaço</a>
+    </nav>
+    <a class="btn btn--light btn--small js-whatsapp" href="#agendar" data-message="Olá! Gostaria de agendar uma massagem na Lotus.">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
+      Agendar
+    </a>
+  </header>
+
+  <main id="topo">
+    <!-- Hero: the client's lotus film plays as the opening -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__film" aria-hidden="true">
+        <video class="hero__video" src="assets/hero.mp4" muted playsinline preload="auto"></video>
+        <video class="hero__video hero__video--relay is-resting" src="assets/hero.mp4" muted playsinline preload="auto" tabindex="-1"></video>
+      </div>
+      <div class="hero__copy">
+        <h1 id="hero-title" class="hero__title" data-reveal-hero>Lotus</h1>
+        <p class="hero__lede" data-reveal-hero>Massagem em Porto Alegre, num espaço feito para desacelerar.</p>
+        <div class="hero__actions" data-reveal-hero>
+          <a class="btn btn--light js-whatsapp" href="#agendar" data-message="Olá! Gostaria de agendar uma massagem na Lotus.">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="link-trace" href="#mapa">Onde você sente?
+            <svg class="icon icon--down" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-down"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature: the body map -->
+    <section class="map" id="mapa" aria-labelledby="map-title">
+      <div class="map__intro">
+        <h2 id="map-title" class="display">Onde você sente?</h2>
+        <p>Toque na parte do corpo que pede atenção. A gente mostra a massagem indicada e já leva sua escolha para a conversa no WhatsApp.</p>
+      </div>
+
+      <div class="map__stage">
+        <div class="body-map" data-draw>
+          <svg class="body-map__figure" viewBox="0 0 600 660" role="img" aria-label="Figura de um corpo de costas com regiões que podem ser escolhidas">
+            <defs><linearGradient id="bodyLine" gradientUnits="userSpaceOnUse" x1="0" y1="20" x2="0" y2="650"><stop offset="0" stop-color="#F0E4D2"/><stop offset=".55" stop-color="#E2D5C3"/><stop offset="1" stop-color="#D9A887"/></linearGradient></defs>
+            <g class="body-map__lines" transform="translate(150 10)">
+              <ellipse class="trace" pathLength="1" cx="150" cy="56" rx="25" ry="31"/>
+              <g id="half">
+                <path class="trace" pathLength="1" d="M158,86 C159,96 160,104 163,111 C176,117 200,117 216,125 C230,132 236,145 237,161 C239,189 240,213 239,235 C242,261 247,291 250,317 C252,333 254,345 255,355 C259,367 260,383 254,391 C249,397 241,395 239,387 C237,377 238,367 236,359 C232,339 226,311 222,287 C219,267 216,245 213,225 C211,207 209,193 206,183 C206,211 202,237 197,257 C196,275 202,295 206,317 C209,339 208,363 205,387 C202,419 199,445 196,467 C194,483 195,495 197,509 C200,535 199,559 192,583 C189,595 188,603 189,611 C192,619 190,627 180,629 C170,631 164,627 164,619 C164,607 166,597 165,585 C163,559 162,535 163,511 C164,495 163,485 161,473 C159,445 156,409 153,381 C152,375 151,371 150,369"/>
+                <path class="trace trace--soft" pathLength="1" d="M194,135 L167,143 L171,170 L176,188"/>
+                <path class="trace trace--soft" pathLength="1" d="M150,326 C162,336 186,338 200,326"/>
+                <path class="trace trace--soft" pathLength="1" d="M178,214 C184,232 186,250 184,262"/>
+              </g>
+              <use href="#half" transform="translate(300 0) scale(-1 1)"/>
+              <path class="trace trace--spine" pathLength="1" d="M150,112 L150,326"/>
+              <path class="trace trace--soft" pathLength="1" d="M150,334 L150,360"/>
+              <path class="trace trace--soft" pathLength="1" d="M131,70 C138,80 162,80 169,70"/>
+            </g>
+            <g class="body-map__leaders" aria-hidden="true"></g>
+          </svg>
+          <div class="body-map__points" role="group" aria-label="Regiões do corpo"></div>
+        </div>
+
+        <aside class="map-panel" aria-live="polite">
+          <div class="map-panel__inner">
+            <p class="map-panel__hint">Escolha uma região no corpo.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Treatments and prices -->
+    <section class="menu" id="massagens" aria-labelledby="menu-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="menu-title" class="display">Massagens e valores</h2>
+          <p>Duração e preço de cada sessão.</p>
+        </div>
+        <ol class="menu__list rule-top" role="list"></ol>
+      </div>
+    </section>
+
+    <!-- Who attends -->
+    <section class="about" id="quem-atende" aria-labelledby="about-title">
+      <div class="wrap about__grid">
+        <figure class="frame frame--portrait">
+          <div class="frame__empty">
+            <svg class="frame__outline" aria-hidden="true"><rect width="100%" height="100%" rx="20" pathLength="1"/></svg>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#lotus-mark"/></svg>
+            <span>Foto de quem atende</span>
+          </div>
+          <span class="tag-provisorio">provisório</span>
+        </figure>
+        <div class="about__text">
+          <h2 id="about-title" class="display">Quem cuida de você</h2>
+          <p class="placeholder-copy">Aqui entra uma apresentação curta de quem atende na Lotus: como chegou à massagem e como é a sessão. <span class="tag-provisorio">provisório</span></p>
+          <h3 class="about__sub">Formação</h3>
+          <ul class="credentials" role="list">
+            <li><span class="credentials__line"></span>Curso ou certificação <span class="tag-provisorio">provisório</span></li>
+            <li><span class="credentials__line"></span>Curso ou certificação <span class="tag-provisorio">provisório</span></li>
+            <li><span class="credentials__line"></span>Curso ou certificação <span class="tag-provisorio">provisório</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="voices" aria-labelledby="voices-title">
+      <div class="wrap">
+        <h2 id="voices-title" class="display">Quem já veio</h2>
+        <div class="voices__row rule-top">
+          <blockquote class="voice">
+            <p>Depoimento real de cliente, com a permissão da pessoa.</p>
+            <footer>Nome ou iniciais <span class="tag-provisorio">provisório</span></footer>
+          </blockquote>
+          <blockquote class="voice">
+            <p>Depoimento real de cliente, com a permissão da pessoa.</p>
+            <footer>Nome ou iniciais <span class="tag-provisorio">provisório</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- The space -->
+    <section class="space" id="espaco" aria-labelledby="space-title">
+      <div class="wrap space__grid">
+        <div>
+          <h2 id="space-title" class="display">O espaço</h2>
+          <p class="space__lede">Atendimento em espaço próprio da Lotus, com hora marcada.</p>
+        </div>
+        <address class="space__address">
+          <span class="space__street">R. Dr. Timóteo, 383</span>
+          <span>Porto Alegre, Rio Grande do Sul</span>
+          <a class="link-trace link-trace--dark" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Dr.%20Tim%C3%B3teo%2C%20383%2C%20Porto%20Alegre%2C%20RS" target="_blank" rel="noopener">Como chegar
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-arrow"/></svg>
+          </a>
+        </address>
+        <figure class="frame frame--wide">
+          <div class="frame__empty">
+            <svg class="frame__outline" aria-hidden="true"><rect width="100%" height="100%" rx="20" pathLength="1"/></svg>
+            <svg viewBox="0 0 120 120" aria-hidden="true"><use href="#lotus-mark"/></svg>
+            <span>Foto da sala de atendimento</span>
+          </div>
+          <span class="tag-provisorio">provisório</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Close -->
+    <section class="close" id="agendar" aria-labelledby="close-title">
+      <div class="wrap close__inner">
+        <svg class="close__mark" viewBox="0 0 40 24" aria-hidden="true"><path pathLength="1" d="M20 21 C17 16 17 8 20 2 C23 8 23 16 20 21Z"/><path pathLength="1" d="M20 21 C15 18 11 12 11 6 C16 8 19 13 20 21Z"/><path pathLength="1" d="M20 21 C25 18 29 12 29 6 C24 8 21 13 20 21Z"/><path pathLength="1" d="M20 21 C13 21 6 17 2 13 C9 12 16 15 20 21Z"/><path pathLength="1" d="M20 21 C27 21 34 17 38 13 C31 12 24 15 20 21Z"/></svg>
+        <h2 id="close-title" class="close__title">Reserve seu horário.</h2>
+        <p class="close__lede">Mande uma mensagem e combine o melhor dia para você.</p>
+        <p class="close__choice" hidden>Sua escolha no mapa: <strong></strong></p>
+        <a class="btn btn--light js-whatsapp js-whatsapp-final" href="#agendar" data-message="Olá! Gostaria de agendar uma massagem na Lotus.">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <p class="close__note" hidden>O número do WhatsApp ainda vai ser adicionado. <span class="tag-provisorio">provisório</span></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__mark">Lotus</span>
+      <span>R. Dr. Timóteo, 383 · Porto Alegre, RS</span>
+      <span>© 2026 Lotus</span>
+    </div>
+  </footer>
+
+  <a class="dock btn btn--light js-whatsapp" href="#agendar" data-message="Olá! Gostaria de agendar uma massagem na Lotus." aria-hidden="true" tabindex="-1">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
+    <span class="dock__label">Agendar pelo WhatsApp</span>
+  </a>
+
+  <!-- Icon and mark sprites, one stroke family -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="lotus-mark" viewBox="0 0 40 24">
+        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21 C17 16 17 8 20 2 C23 8 23 16 20 21Z"/>
+          <path d="M20 21 C15 18 11 12 11 6 C16 8 19 13 20 21Z"/>
+          <path d="M20 21 C25 18 29 12 29 6 C24 8 21 13 20 21Z"/>
+          <path d="M20 21 C13 21 6 17 2 13 C9 12 16 15 20 21Z"/>
+          <path d="M20 21 C27 21 34 17 38 13 C31 12 24 15 20 21Z"/>
+        </g>
+      </symbol>
+      <symbol id="icon-chat" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l1.2-3.6A7.8 7.8 0 1 1 8.6 18.6z"/>
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M9.2 9.6c.2 2.4 2.6 4.8 5.1 5.1"/>
+      </symbol>
+      <symbol id="icon-down" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M6 13l6 6 6-6"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M9 7h8v8"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-08T17:10:00-03:00",
+  "title": "Design System: Lotus",
+  "extensions": {
+    "colorMeta": {
+      "clay":  { "role": "primary", "displayName": "Terracota", "canonical": "#B3704E", "oklch": "oklch(61.0% 0.098 47.2)", "tonalRamp": ["#1A0400", "#3C1B08", "#61351E", "#895134", "#B26F4E", "#D19577", "#F1BCA2", "#FFE4CE"] },
+      "ink":   { "role": "neutral", "displayName": "Marrom Escuro", "canonical": "#2F231B", "oklch": "oklch(26.8% 0.023 55.2)", "tonalRamp": ["#0F0A07", "#2B231F", "#4A4039", "#6B5E56", "#8E7F75", "#AFA299", "#D2C7BF", "#F6ECE6"] },
+      "earth": { "role": "neutral", "displayName": "Marrom Quente", "canonical": "#584333", "oklch": "oklch(40.1% 0.039 58.7)", "tonalRamp": ["#110904", "#2E221A", "#4E3E33", "#705D4E", "#947D6C", "#B6A091", "#D8C5B8", "#FBEBE0"] },
+      "ochre": { "role": "neutral", "displayName": "Ocre", "canonical": "#8B7A66", "oklch": "oklch(59.0% 0.036 71.6)", "tonalRamp": ["#100A04", "#2C2319", "#4B4032", "#6D5F4E", "#907F6B", "#B2A290", "#D4C7B7", "#F8EDDF"] },
+      "sand":  { "role": "neutral", "displayName": "Areia", "canonical": "#C1B097", "oklch": "oklch(76.5% 0.040 77.5)", "tonalRamp": ["#100A04", "#2C2418", "#4B4030", "#6C5F4B", "#908068", "#B1A38E", "#D4C7B5", "#F7EDDD"] },
+      "cream": { "role": "neutral", "displayName": "Creme", "canonical": "#E2D5C3", "oklch": "oklch(87.9% 0.028 76.2)", "tonalRamp": ["#0E0A06", "#2A241C", "#494136", "#696052", "#8C8070", "#AEA395", "#D1C8BB", "#F5EDE2"] }
+    },
+    "derivedColors": [
+      { "name": "cream-dim", "value": "rgba(226, 213, 195, 0.72)", "purpose": "Texto secundário no escuro (0.88 sobre o campo earth)." },
+      { "name": "cream-faint", "value": "rgba(226, 213, 195, 0.32)", "purpose": "Réguas, bordas finas, linhas-guia em repouso." },
+      { "name": "ink-dim", "value": "rgba(47, 35, 27, 0.78)", "purpose": "Texto secundário nos campos claros." },
+      { "name": "light-only tints", "value": "#F0E4D2, #D9A887, #F2B48C", "purpose": "Só dentro da luz: gradiente da linha do corpo, lavagem do vídeo, miolo do ponto ativo. Nunca fundo, texto ou campo." }
+    ],
+    "sectionFields": [
+      { "section": "hero, mapa, rodapé", "field": "ink", "text": "cream" },
+      { "section": "massagens", "field": "earth", "text": "cream" },
+      { "section": "quem cuida, depoimentos", "field": "sand", "text": "ink" },
+      { "section": "o espaço", "field": "cream", "text": "ink" },
+      { "section": "fechamento", "field": "clay", "text": "ink" }
+    ],
+    "typographyMeta": {
+      "hero":     { "displayName": "Hero", "purpose": "Só a palavra Lotus sob a flor; o título do fechamento usa a mesma escala." },
+      "display":  { "displayName": "Display", "purpose": "Títulos de seção." },
+      "headline": { "displayName": "Headline", "purpose": "Nome da região no painel do mapa." },
+      "title":    { "displayName": "Title", "purpose": "Nomes de massagem, depoimentos, endereço." },
+      "body":     { "displayName": "Body", "purpose": "Leitura, medida de 30 a 46ch." },
+      "label":    { "displayName": "Label", "purpose": "Pontos do mapa, regiões, navegação, rodapé; caixa normal." },
+      "button":   { "displayName": "Button", "purpose": "Ações de WhatsApp." }
+    },
+    "shadows": [
+      { "name": "button-lift", "value": "0 14px 30px -12px rgba(12, 8, 5, .7), 0 2px 6px rgba(12, 8, 5, .25)", "purpose": "Hover do botão principal, junto com translateY(-2px)." },
+      { "name": "point-halo", "value": "0 0 0 7px rgba(179, 112, 78, .22), 0 0 22px 4px rgba(179, 112, 78, .55)", "purpose": "Região escolhida; respira em 4s ease-draw." },
+      { "name": "dock", "value": "0 12px 30px -10px rgba(20, 14, 10, .7)", "purpose": "Botão fixo do celular." },
+      { "name": "line-glow", "value": "drop-shadow(0 0 2px rgba(240, 228, 210, .55)) drop-shadow(0 2px 12px rgba(179, 112, 78, .45))", "purpose": "Filtro sobre o traço do corpo." }
+    ],
+    "motion": [
+      { "name": "ease-draw", "value": "cubic-bezier(0.45, 0, 0.15, 1)", "purpose": "Tudo que é traçado: corpo (2.6s), réguas (1.8s), contornos de foto (2.4s), lótus do fechamento (2.2s), linhas de formação (1.2s), respiração do ponto (4s)." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Tudo que acende ou responde: texto (1.4s, atraso 0.35s), hover (0.4 a 0.7s), troca do painel (0.9s), dock (0.9s)." },
+      { "name": "hero-bloom", "value": "vídeo em ~2.1s; cascata 0s / 0.18s / 0.36s; topbar 0.7s", "purpose": "Texto do hero sobe 18px e sai de blur(6px) quando a flor termina." },
+      { "name": "map-stagger", "value": "2.0s + 0.12s por região", "purpose": "Linhas-guia, âncoras e pontos chegam depois do corpo." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Tudo já desenhado; vídeo parado no quadro final; sem respiração nem troca animada." }
+    ],
+    "breakpoints": [
+      { "name": "stack-map", "value": "900px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "narrow", "value": "560px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botão principal (creme)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A ação de WhatsApp: o elemento mais claro sobre o escuro, o marrom quente e a terracota.",
+      "html": "<a class=\"ds-btn\" href=\"#\"><svg class=\"ds-icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M4.5 19.5l1.2-3.6A7.8 7.8 0 1 1 8.6 18.6z\"/><path fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" d=\"M9.2 9.6c.2 2.4 2.6 4.8 5.1 5.1\"/></svg>Agendar pelo WhatsApp</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; background: #E2D5C3; color: #2F231B; font: 600 1.0625rem/1 'Hanken Grotesk', system-ui, sans-serif; letter-spacing: .005em; text-decoration: none; box-shadow: 0 0 0 0 rgba(226,213,195,0); transition: box-shadow .6s cubic-bezier(0.16,1,0.3,1), transform .6s cubic-bezier(0.16,1,0.3,1); } .ds-btn:hover { box-shadow: 0 14px 30px -12px rgba(12,8,5,.7), 0 2px 6px rgba(12,8,5,.25); transform: translateY(-2px); } .ds-btn:active { transform: translateY(0); transition-duration: .15s; } .ds-btn:focus-visible { outline: 1.5px solid #B3704E; outline-offset: 4px; } .ds-icon { width: 1.25em; height: 1.25em; flex: none; }"
+    },
+    {
+      "name": "Botão ink",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "A mesma ação sobre campos areia e creme (o dock do celular troca para ele).",
+      "html": "<a class=\"ds-btn-ink\" href=\"#\">Agendar pelo WhatsApp</a>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; min-height: 3.25rem; padding: 0 1.6rem; border-radius: 999px; background: #2F231B; color: #E2D5C3; font: 600 1.0625rem/1 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; transition: box-shadow .6s cubic-bezier(0.16,1,0.3,1), transform .6s cubic-bezier(0.16,1,0.3,1); } .ds-btn-ink:hover { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(12,8,5,.7), 0 2px 6px rgba(12,8,5,.25); } .ds-btn-ink:focus-visible { outline: 1.5px solid #B3704E; outline-offset: 4px; }"
+    },
+    {
+      "name": "Link traçado",
+      "kind": "custom",
+      "refersTo": "link-trace",
+      "description": "Link secundário; a régua repousa em 35% e se traça até 100% no hover.",
+      "html": "<div style=\"background:#2F231B;padding:1.5rem\"><a class=\"ds-link-trace\" href=\"#\">Onde você sente?</a></div>",
+      "css": ".ds-link-trace { position: relative; display: inline-flex; padding: .5rem 0; color: rgba(226,213,195,.72); font: 400 1.0625rem/1.6 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; transition: color .4s cubic-bezier(0.16,1,0.3,1); } .ds-link-trace::after { content: ''; position: absolute; left: 0; right: 0; bottom: .2rem; height: 1px; background: currentColor; transform-origin: left; transform: scaleX(.35); transition: transform .7s cubic-bezier(0.16,1,0.3,1); } .ds-link-trace:hover, .ds-link-trace:focus-visible { color: #E2D5C3; } .ds-link-trace:hover::after, .ds-link-trace:focus-visible::after { transform: scaleX(1); } .ds-link-trace:focus-visible { outline: 1.5px solid #B3704E; outline-offset: 4px; }"
+    },
+    {
+      "name": "Tag provisório",
+      "kind": "chip",
+      "refersTo": "tag-provisorio",
+      "description": "Marca de conteúdo reservado até o material real do cliente chegar.",
+      "html": "<p class=\"ds-ph\">Curso ou certificação <span class=\"ds-tag\">provisório</span></p>",
+      "css": ".ds-ph { background: #C1B097; color: #2F231B; padding: 1rem; font: 400 1.0625rem/1.6 'Hanken Grotesk', system-ui, sans-serif; } .ds-tag { display: inline-block; margin-left: .35rem; padding: .05rem .5rem; border: 1px dashed currentColor; border-radius: 999px; font: 500 .72rem/1.5 'Hanken Grotesk', system-ui, sans-serif; letter-spacing: .02em; vertical-align: .15em; white-space: nowrap; }"
+    },
+    {
+      "name": "Ponto do mapa do corpo",
+      "kind": "custom",
+      "refersTo": "body-point",
+      "description": "Rótulo-botão de região; ativo enche de terracota e respira.",
+      "html": "<div class=\"ds-map-bg\"><button class=\"ds-point\" aria-pressed=\"false\"><span class=\"ds-dot\"></span>Ombros</button><button class=\"ds-point\" aria-pressed=\"true\"><span class=\"ds-dot\"></span>Lombar</button></div>",
+      "css": ".ds-map-bg { background: #2F231B; padding: 1.5rem; display: flex; gap: 2rem; } .ds-point { display: flex; align-items: center; gap: .55rem; min-height: 2.75rem; padding: .35rem .2rem; border: 0; background: none; color: rgba(226,213,195,.72); font: 500 .95rem/1.2 'Hanken Grotesk', system-ui, sans-serif; cursor: pointer; transition: color .4s cubic-bezier(0.16,1,0.3,1); } .ds-dot { width: .8rem; height: .8rem; border-radius: 50%; border: 1.4px solid #E2D5C3; background: #2F231B; transition: background-color .5s cubic-bezier(0.16,1,0.3,1), border-color .5s, box-shadow .8s cubic-bezier(0.16,1,0.3,1); } .ds-point:hover { color: #E2D5C3; } .ds-point:hover .ds-dot { box-shadow: 0 0 0 6px rgba(226,213,195,.12); } .ds-point:focus-visible { outline: 1.5px solid #B3704E; outline-offset: 4px; border-radius: 4px; } .ds-point[aria-pressed='true'] { color: #E2D5C3; } .ds-point[aria-pressed='true'] .ds-dot { background: #B3704E; border-color: #B3704E; box-shadow: 0 0 0 7px rgba(179,112,78,.22), 0 0 22px 4px rgba(179,112,78,.55); animation: ds-breathe 4s cubic-bezier(0.45,0,0.15,1) infinite; } @keyframes ds-breathe { 0%,100% { box-shadow: 0 0 0 7px rgba(179,112,78,.22), 0 0 22px 4px rgba(179,112,78,.55); } 50% { box-shadow: 0 0 0 12px rgba(179,112,78,.08), 0 0 30px 8px rgba(179,112,78,.35); } }"
+    },
+    {
+      "name": "Painel do mapa",
+      "kind": "card",
+      "refersTo": "map-panel",
+      "description": "Mostra a região escolhida, a massagem indicada e a ação já com a região.",
+      "html": "<div class=\"ds-map-bg2\"><aside class=\"ds-panel\"><h3 class=\"ds-panel-title\">Lombar</h3><p class=\"ds-panel-feel\">Muito tempo sentado, ou em pé, e a parte de baixo das costas reclama.</p><div class=\"ds-rx\"><span class=\"ds-rx-label\">Massagem indicada</span><span class=\"ds-rx-name\">Nome da massagem</span><span class=\"ds-rx-meta\">60 min · R$ —</span></div></aside></div>",
+      "css": ".ds-map-bg2 { background: #2F231B; padding: 1.5rem; } .ds-panel { display: grid; gap: 1.1rem; padding: clamp(1.5rem,3vw,2.5rem); border: 1px solid rgba(226,213,195,.32); border-radius: 1.5rem; background: rgba(47,35,27,.6); color: #E2D5C3; font: 400 1.0625rem/1.6 'Hanken Grotesk', system-ui, sans-serif; } .ds-panel-title { margin: 0; font: 400 clamp(2.2rem,4vw,3.1rem)/1.02 Italiana, 'Times New Roman', serif; } .ds-panel-feel { margin: 0; color: rgba(226,213,195,.72); max-width: 36ch; } .ds-rx { display: grid; gap: .35rem; padding: 1rem 0; border-top: 1px solid rgba(226,213,195,.32); border-bottom: 1px solid rgba(226,213,195,.32); } .ds-rx-label { font-size: .9rem; color: #C1B097; } .ds-rx-name { font-size: 1.15rem; font-weight: 600; } .ds-rx-meta { color: rgba(226,213,195,.72); font-variant-numeric: tabular-nums; }"
+    },
+    {
+      "name": "Linha do cardápio",
+      "kind": "custom",
+      "refersTo": "menu-row",
+      "description": "Uma massagem por linha, separada por régua traçada; nunca um card.",
+      "html": "<ol class=\"ds-menu\"><li class=\"ds-row\"><h3 class=\"ds-name\">Nome da massagem</h3><span class=\"ds-time\">60 min</span><span class=\"ds-price\">R$ —</span><p class=\"ds-desc\">Uma frase sobre a sessão.</p><div class=\"ds-regions\"><span class=\"ds-region\">Costas</span><span class=\"ds-region\">Lombar</span></div></li></ol>",
+      "css": ".ds-menu { list-style: none; margin: 0; padding: 0 1.5rem; background: #584333; color: #E2D5C3; font: 400 1.0625rem/1.6 'Hanken Grotesk', system-ui, sans-serif; } .ds-row { display: grid; grid-template-columns: minmax(0,1fr) auto auto; gap: .5rem 2.5rem; align-items: baseline; padding: 1.6rem 0; border-bottom: 1px solid rgba(226,213,195,.32); } .ds-name { margin: 0; font: 400 clamp(1.7rem,3.4vw,2.4rem)/1.1 Italiana, 'Times New Roman', serif; } .ds-time { color: #C1B097; font-variant-numeric: tabular-nums; } .ds-price { font-weight: 600; font-size: 1.15rem; font-variant-numeric: tabular-nums lining-nums; } .ds-desc { grid-column: 1; margin: 0; color: rgba(226,213,195,.88); max-width: 46ch; } .ds-regions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: .4rem; } .ds-region { font-size: .82rem; color: #C1B097; border: 1px solid rgba(193,176,151,.45); border-radius: 999px; padding: .1rem .6rem; }"
+    },
+    {
+      "name": "Moldura de foto vazia",
+      "kind": "card",
+      "refersTo": "frame",
+      "description": "Espaço reservado de foto com contorno traçado, lótus em linha e tag provisório.",
+      "html": "<figure class=\"ds-frame\"><svg class=\"ds-outline\" aria-hidden=\"true\"><rect width=\"100%\" height=\"100%\" rx=\"20\"/></svg><svg class=\"ds-lotus\" viewBox=\"0 0 40 24\" aria-hidden=\"true\"><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 21 C17 16 17 8 20 2 C23 8 23 16 20 21Z\"/><path d=\"M20 21 C15 18 11 12 11 6 C16 8 19 13 20 21Z\"/><path d=\"M20 21 C25 18 29 12 29 6 C24 8 21 13 20 21Z\"/><path d=\"M20 21 C13 21 6 17 2 13 C9 12 16 15 20 21Z\"/><path d=\"M20 21 C27 21 34 17 38 13 C31 12 24 15 20 21Z\"/></g></svg><span>Foto de quem atende</span><span class=\"ds-frame-tag\">provisório</span></figure>",
+      "css": ".ds-frame { position: relative; margin: 0; width: 16rem; aspect-ratio: 4 / 5; border-radius: 1.25rem; overflow: hidden; display: grid; place-content: center; justify-items: center; gap: .9rem; background: #C1B097; color: #2F231B; font: 400 .95rem/1.4 'Hanken Grotesk', system-ui, sans-serif; } .ds-outline { position: absolute; inset: .5px; width: calc(100% - 1px); height: calc(100% - 1px); overflow: visible; } .ds-outline rect { fill: none; stroke: currentColor; stroke-width: 1; } .ds-lotus { width: 4.5rem; height: auto; } .ds-frame-tag { position: absolute; top: 1rem; right: 1rem; padding: .05rem .5rem; border: 1px dashed currentColor; border-radius: 999px; font: 500 .72rem/1.5 'Hanken Grotesk', system-ui, sans-serif; }"
+    },
+    {
+      "name": "Barra do topo",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "Marca em traço e Italiana, links em creme suave, botão pequeno; some a navegação abaixo de 760px.",
+      "html": "<header class=\"ds-top\"><span class=\"ds-mark\">Lotus</span><nav class=\"ds-nav\"><a href=\"#\">Onde você sente</a><a href=\"#\">Massagens</a><a href=\"#\">O espaço</a></nav><a class=\"ds-btn-sm\" href=\"#\">Agendar</a></header>",
+      "css": ".ds-top { display: flex; align-items: center; gap: 1.5rem; padding: 1.1rem 1.5rem; background: #2F231B; color: #E2D5C3; } .ds-mark { font: 400 1.6rem/1 Italiana, 'Times New Roman', serif; } .ds-nav { display: flex; gap: 2rem; margin-left: auto; } .ds-nav a { color: rgba(226,213,195,.72); text-decoration: none; font: 400 .95rem/1.6 'Hanken Grotesk', system-ui, sans-serif; transition: color .3s; } .ds-nav a:hover, .ds-nav a:focus-visible { color: #E2D5C3; } .ds-btn-sm { display: inline-flex; align-items: center; min-height: 2.6rem; padding: 0 1.15rem; border-radius: 999px; background: #E2D5C3; color: #2F231B; font: 600 .95rem/1 'Hanken Grotesk', system-ui, sans-serif; text-decoration: none; } .ds-btn-sm:focus-visible { outline: 1.5px solid #B3704E; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Mapa de Reflexologia à Noite",
+    "overview": "A Lotus é uma folha de mapa marrom-escura sobre a qual tudo é desenhado em traço fino creme, com a mesma espessura da linha luminosa do vídeo de abertura. A lótus do filme, o corpo de costas no mapa, as réguas entre as massagens, o contorno das fotos e a lótus do fechamento são a mesma linha, e todos entram na tela sendo traçados. O lugar escolhido acende em terracota; nada mais acende.\n\nAbaixo do mapa, a folha dá lugar a campos inteiros de cor, um por seção: marrom quente, areia, creme e, no fechamento, terracota. A densidade é baixa e calma: muito respiro vertical, texto curto, uma ação por campo. A tipografia faz o par com a linha: Italiana, uma romana fina do mesmo peso do traço, para tudo que é nome; Hanken Grotesk para ler e para agir.\n\nO mundo recusa o padrão visual de spa (foto de pedras e velas, grade de cards de serviço iguais). Serviços são linhas de um cardápio separadas por réguas traçadas, não cartões.",
+    "keyCharacteristics": [
+      "Paleta fechada de seis cores, definida pelo cliente.",
+      "Traço único de 1 a 1,6 px para linhas, ícones, contornos e marca.",
+      "Todo elemento novo entra sendo traçado ou \"acendendo\" (opacidade, às vezes com desfoque), nunca pulando.",
+      "A ação (WhatsApp) é sempre o elemento de maior contraste do campo, em forma de pílula.",
+      "Campos de cor inteiros por seção, sem cartões flutuando sobre eles."
+    ],
+    "rules": [
+      { "name": "A Regra da Paleta Fechada", "body": "Fundos, textos, bordas e botões usam só as seis cores e suas transparências. Os tons extras do código (#F0E4D2, #D9A887, #F2B48C, #000) existem apenas dentro da luz: o gradiente da linha do corpo, a lavagem que recolore o vídeo e o miolo do ponto ativo. Nunca viram fundo, texto ou campo.", "section": "colors" },
+      { "name": "A Regra de Um Lugar Aceso", "body": "A terracota marca a escolha. Em qualquer tela escura há no máximo uma região acesa; ela não decora títulos, ícones nem bordas em repouso.", "section": "colors" },
+      { "name": "A Regra do Peso Único", "body": "Italiana só existe em 400 e só para nomes (marca, seções, regiões, massagens, endereço, depoimentos). Ênfase dentro do texto vem de Hanken 600/700, nunca de Italiana em negrito ou itálico falso.", "section": "typography" },
+      { "name": "A Regra da Luz, Não da Pilha", "body": "Superfícies em repouso são planas. Brilho pertence à linha e à escolha; sombra pertence ao hover e ao que flutua. Sombras duras deslocadas não existem neste mundo.", "section": "elevation" },
+      { "name": "A Regra do Traço Único", "body": "Linhas, ícones, a marca e os contornos usam traço de 1 a 1,6px com pontas e junções arredondadas. Ícones são SVG de contorno no mesmo traço, nunca preenchidos.", "section": "shapes" },
+      { "name": "A Regra da Linha Primeiro", "body": "Primeiro a linha se traça, depois o texto acende. Nada escala, quica ou pula.", "section": "components" }
+    ],
+    "dos": [
+      "Do use só as seis cores da paleta e suas transparências para fundos, textos e bordas.",
+      "Do desenhe linhas, ícones e contornos com traço de 1 a 1,6px, pontas arredondadas, na cor do texto do campo.",
+      "Do dê a cada seção um campo de cor inteiro e mantenha o texto em marrom escuro sobre areia, creme e terracota.",
+      "Do faça da ação de WhatsApp o elemento de maior contraste do campo: creme sobre escuro, marrom quente e terracota; ink sobre areia e creme.",
+      "Do faça elementos novos entrarem traçados (ease-draw) ou acendendo (ease-out), e respeite o movimento reduzido mostrando o estado final.",
+      "Do marque todo conteúdo reservado com a tag provisório até o material real chegar."
+    ],
+    "donts": [
+      "Don't use a terracota como decoração em repouso; ela é a escolha e o campo do fechamento.",
+      "Don't transforme os tons de luz (#F0E4D2, #D9A887, #F2B48C) em fundos, textos ou campos.",
+      "Don't monte serviços como uma grade de cards iguais, nem use imagens de spa genéricas (pedras, velas).",
+      "Don't use Italiana em negrito, em texto corrido ou em botões.",
+      "Don't use ícones preenchidos, sombras duras deslocadas ou animações de escala e quique.",
+      "Don't coloque o botão creme sobre campos areia ou creme, onde ele desaparece."
+    ]
+  }
+}
