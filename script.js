@@ -2,33 +2,100 @@
    Flor e Ser · Espaço Terapêutico — conteúdo editável
    ===================================================================== */
 
-// Número do WhatsApp com DDI e DDD, só dígitos. Ex.: '5551999999999'.
-// Vazio = os botões abrem o WhatsApp sem destinatário e aparece um aviso.
-const WHATSAPP = '';
+// Número do WhatsApp com DDI e DDD, só dígitos.
+const WHATSAPP = '5551992981851';
 
-// Lista de massagens. Preencha com os dados reais do Flor e Ser.
-// `regioes` liga a massagem às partes do mapa do corpo:
-// cabeca, ombros, costas, bracos, lombar, pernas, pes
-// Exemplo de formato (não é dado real):
-// { nome: 'Nome da massagem', descricao: 'Uma frase sobre a sessão.', duracao: '60 min', preco: 'R$ 000', regioes: ['costas', 'lombar'] },
-const MASSAGENS = [];
+// Links oficiais
+const MAPS_URL = 'https://maps.app.goo.gl/R5CZ1Vu2cix8McBp9';
+const INSTAGRAM_URL = 'https://www.instagram.com/espacofloreserpoa/';
 
-// Regiões do mapa. x/y no desenho (600 × 660); lado do rótulo.
-const REGIOES = [
-  { id: 'cabeca', curto: 'Cabeça', nome: 'Cabeça', x: 300, y: 50, lado: 'left',
-    sente: 'Testa franzida, mandíbula travada, a cabeça que não desliga.' },
-  { id: 'ombros', curto: 'Ombros', nome: 'Pescoço e ombros', x: 346, y: 132, lado: 'right',
-    sente: 'Onde o computador e o celular se acumulam: ombros subindo perto das orelhas, dificuldade de virar o pescoço.' },
-  { id: 'costas', curto: 'Costas', nome: 'Costas', x: 300, y: 190, lado: 'left',
-    sente: 'Peso entre as escápulas, a sensação de carregar o dia nas costas.' },
-  { id: 'bracos', curto: 'Braços', nome: 'Braços e mãos', x: 396, y: 312, lado: 'right',
-    sente: 'Antebraços cansados de digitar, mãos que trabalham o dia inteiro.' },
-  { id: 'lombar', curto: 'Lombar', nome: 'Lombar', x: 300, y: 290, lado: 'left',
-    sente: 'Muito tempo sentado, ou em pé, e a parte de baixo das costas reclama.' },
-  { id: 'pernas', curto: 'Pernas', nome: 'Pernas', x: 334, y: 455, lado: 'right',
-    sente: 'Pernas pesadas no fim do dia, panturrilhas que pedem pausa.' },
-  { id: 'pes', curto: 'Pés', nome: 'Pés', x: 272, y: 628, lado: 'left',
-    sente: 'Horas em pé ou de sapato apertado. Os pés sustentam todo o resto.' },
+// Lista de serviços e rituais do Espaço Flor e Ser.
+const MASSAGENS = [
+  {
+    nome: 'Meu momento... Relaxamento Profundo',
+    subtitulo: 'Massagem suave para desacelerar corpo e mente.',
+    descricao: [
+      'Cada movimento é pensado para acalmar o corpo, silenciar a mente e conduzir você a um estado profundo de relaxamento.',
+      'Perfeita para quem deseja reduzir o estresse do dia a dia e respirar com mais leveza.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão avulsa', duracao: '60min', preco: 'R$ 160' },
+      { rotulo: 'Pacote 5 sessões', preco: 'R$ 700', detalhe: 'R$ 140 cada' },
+    ],
+  },
+  {
+    nome: 'Terapia Corporal Integrativa',
+    subtitulo: 'Foco em dores, tensões e liberação muscular.',
+    descricao: [
+      'Sinta seu corpo mais solto, leve e em equilíbrio. Este ritual combina técnicas terapêuticas com um toque sensível e consciente, promovendo um alívio gradual e eficaz.',
+      'Cada manobra é direcionada às necessidades do seu corpo, liberando pontos de tensão, melhorando a mobilidade e restaurando a sensação de bem-estar físico.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão avulsa', duracao: '60min', preco: 'R$ 160' },
+      { rotulo: 'Pacote 5 sessões', preco: 'R$ 750', detalhe: 'R$ 150 cada' },
+    ],
+  },
+  {
+    nome: 'Ritual de Leveza',
+    subtitulo: 'Drenagem linfática: menos inchaço e mais bem-estar',
+    descricao: [
+      'Estimula o sistema linfático, reduz a retenção de líquidos, promove leveza corporal, ativa a circulação e contribui para o equilíbrio do organismo.',
+      'Ideal para quem busca eliminar inchaços, edemas, e remover o excesso de fluidos retidos nos tecidos.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão avulsa', duracao: '60min', preco: 'R$ 160' },
+      { rotulo: 'Pacote 5 sessões', preco: 'R$ 750', detalhe: 'R$ 150 cada' },
+    ],
+  },
+  {
+    nome: 'Ritual Esculpir',
+    subtitulo: 'Massagem modeladora + Lipoplastia transdérmica',
+    descricao: [
+      'A massagem estética auxilia na redução de medidas, modela o corpo e valoriza os contornos naturais.',
+      'Nosso protocolo com enzimas transdérmicas redutoras de medidas entrega resultados com a mesma performance de procedimentos injetáveis, mas de forma totalmente não invasiva, segura e indolor.',
+      'Atua em regiões como abdômen, pernas e glúteos, estimulando a circulação e promovendo efeito lifting.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão avulsa', duracao: '60min', preco: 'R$ 180' },
+      { rotulo: 'Pacote 5 sessões', preco: 'R$ 850', detalhe: 'R$ 170 cada' },
+    ],
+  },
+  {
+    nome: 'Shape Express',
+    subtitulo: 'Massagem modeladora + Lipocavitação',
+    descricao: [
+      'Um protocolo intensivo que une massagem modeladora e lipocavitação para potencializar a perda de medidas, gordura localizada e valorizar suas curvas de forma mais rápida e eficiente.',
+      'O ultrassom cavitacional atua na quebra da membrana da célula de gordura, facilitando sua eliminação através da urina e suor.',
+      'Após a lipocavitação é feita a drenagem na região tratada para potencializar os resultados.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão avulsa', duracao: '60min', preco: 'R$ 230' },
+      { rotulo: 'Pacote 5 sessões', preco: 'R$ 1.100', detalhe: 'R$ 220 cada' },
+    ],
+  },
+  {
+    categoria: 'Experiências Diferenciadas',
+    nome: 'Ritual Completo',
+    subtitulo: 'Relaxamento e pontos terapêuticos',
+    descricao: [
+      'Mais do que uma massagem, é um momento de cuidado profundo, onde o tempo desacelera e você se permite simplesmente sentir.',
+      'Através de uma massagem suave, com toques contínuos e envolventes, o corpo é gentilmente levado a liberar tensões, enquanto a mente encontra descanso.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão', duracao: '90min', preco: 'R$ 200' },
+    ],
+  },
+  {
+    categoria: 'Experiências Diferenciadas',
+    nome: 'Ritual Premium',
+    subtitulo: 'SPA dos pés para promover relaxamento profundo, aliviar o estresse e a tensão acumulada ao longo do dia.',
+    descricao: [
+      'Aromaterapia com massagem relaxante ou candle massage.',
+    ],
+    opcoes: [
+      { rotulo: 'Sessão', duracao: '120min', preco: 'R$ 260' },
+    ],
+  },
 ];
 
 /* ===================================================================== */
@@ -36,27 +103,30 @@ const REGIOES = [
 const BASE_MSG = 'Olá! Gostaria de agendar uma massagem no Flor e Ser.';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root = document.documentElement;
-let escolha = null;
 
 function waLink(text) {
   const t = encodeURIComponent(text);
   return WHATSAPP ? `https://wa.me/${WHATSAPP}?text=${t}` : `https://wa.me/?text=${t}`;
 }
 
-function mensagem() {
-  return escolha ? `${BASE_MSG} Sinto mais em: ${escolha.nome.toLowerCase()}.` : BASE_MSG;
+function mensagem(customService) {
+  if (customService) {
+    return `Olá! Gostaria de agendar o serviço "${customService}" no Flor e Ser.`;
+  }
+  return BASE_MSG;
 }
 
 function atualizarLinks() {
   document.querySelectorAll('.js-whatsapp').forEach((a) => {
-    // Sem número: os botões levam ao fechamento, onde o aviso provisório explica.
-    // Só o botão do fechamento abre o WhatsApp (sem destinatário) enquanto isso.
     if (!WHATSAPP && !a.classList.contains('js-whatsapp-final')) {
       a.href = '#agendar';
       a.removeAttribute('target');
       return;
     }
-    a.href = waLink(mensagem());
+    const service = a.dataset.service || '';
+    const customMsg = a.dataset.message || '';
+    const text = service ? mensagem(service) : (customMsg || BASE_MSG);
+    a.href = waLink(text);
     a.target = '_blank';
     a.rel = 'noopener';
   });
@@ -80,143 +150,104 @@ function setupHero() {
     return;
   }
 
-  // Trigger the stroke-drawing & petal-unfurling choreography on next frame
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       root.classList.add('is-drawing');
     });
   });
 
-  // Reveal the brand title lockup ("Flor e Ser · Espaço Terapêutico") and actions as the flower finishes blooming
   setTimeout(bloom, 1350);
 }
 
-/* ---------- Body map ---------- */
-function setupMap() {
-  const map = document.querySelector('.body-map');
-  const pointsBox = map.querySelector('.body-map__points');
-  const leaders = map.querySelector('.body-map__leaders');
-  const panel = document.querySelector('.map-panel__inner');
-  const NS = 'http://www.w3.org/2000/svg';
-  const narrow = window.matchMedia('(max-width: 560px)').matches;
-  const LEFT_X = narrow ? 150 : 118;
-  const RIGHT_X = narrow ? 455 : 482;
+/* ---------- Treatments ---------- */
+function renderRow(m) {
+  const paragraphs = Array.isArray(m.descricao)
+    ? m.descricao.map((p) => `<p class="menu__desc">${p}</p>`).join('')
+    : (m.descricao ? `<p class="menu__desc">${m.descricao}</p>` : '');
 
-  REGIOES.forEach((r, i) => {
-    const lx = r.lado === 'left' ? LEFT_X : RIGHT_X;
-    const delay = `${2.0 + i * 0.12}s`;
+  const opcoesHtml = (m.opcoes || []).map((op) => `
+    <div class="menu__option">
+      <span class="menu__option-label">
+        ${op.rotulo}${op.duracao ? ` <span class="menu__option-duration">(${op.duracao})</span>` : ''}:
+      </span>
+      <span class="menu__option-price">${op.preco}</span>
+      ${op.detalhe ? `<span class="menu__option-detail">(${op.detalhe})</span>` : ''}
+    </div>
+  `).join('');
 
-    const line = document.createElementNS(NS, 'path');
-    line.setAttribute('d', `M${r.x},${r.y} L${lx},${r.y}`);
-    line.setAttribute('pathLength', '1');
-    line.setAttribute('class', 'leader');
-    line.style.setProperty('--d', delay);
-    line.dataset.id = r.id;
-    leaders.appendChild(line);
-
-    const node = document.createElementNS(NS, 'circle');
-    node.setAttribute('cx', r.x);
-    node.setAttribute('cy', r.y);
-    node.setAttribute('r', '3');
-    node.setAttribute('class', 'anchor');
-    node.dataset.id = r.id;
-    leaders.appendChild(node);
-
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = `point point--${r.lado}`;
-    b.style.left = `${(lx / 600) * 100}%`;
-    b.style.top = `${(r.y / 660) * 100}%`;
-    b.style.setProperty('--d', delay);
-    b.setAttribute('aria-pressed', 'false');
-    b.dataset.id = r.id;
-    b.innerHTML = `<span class="point__dot" aria-hidden="true"></span><span>${r.curto}</span>`;
-    b.setAttribute('aria-label', r.nome);
-    b.addEventListener('click', () => escolher(r.id));
-    pointsBox.appendChild(b);
-  });
-
-  function escolher(id) {
-    escolha = REGIOES.find((r) => r.id === id);
-    map.querySelectorAll('.point').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.id === id)));
-    leaders.querySelectorAll('[data-id]').forEach((el) => el.classList.toggle('is-active', el.dataset.id === id));
-
-    const indicadas = MASSAGENS.filter((m) => (m.regioes || []).includes(id));
-    const rx = indicadas.length
-      ? indicadas.map((m) => `
-          <div class="map-panel__rx">
-            <span class="map-panel__rx-label">Massagem indicada</span>
-            <span class="map-panel__rx-name">${m.nome}</span>
-            <span class="map-panel__rx-meta">${[m.duracao, m.preco].filter(Boolean).join(' · ')}</span>
-          </div>`).join('')
-      : `<div class="map-panel__rx">
-            <span class="map-panel__rx-label">Massagem indicada</span>
-            <span class="map-panel__rx-name">Entra aqui a massagem do Flor e Ser para essa região ${tag()}</span>
-            <span class="map-panel__rx-meta">Duração · valor</span>
-          </div>`;
-
-    panel.innerHTML = `
-      <h3 class="map-panel__title">${escolha.nome}</h3>
-      <p class="map-panel__feel">${escolha.sente}</p>
-      ${rx}
-      <a class="btn btn--light js-whatsapp" href="#agendar">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
-        Agendar para ${escolha.curto.toLowerCase()}
-      </a>`;
-    panel.classList.remove('is-swapping');
-    void panel.offsetWidth;
-    panel.classList.add('is-swapping');
-    if (window.matchMedia('(max-width: 900px)').matches) {
-      panel.parentElement.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
-    }
-
-    const choice = document.querySelector('.close__choice');
-    if (choice) {
-      choice.hidden = false;
-      choice.querySelector('strong').textContent = escolha.nome;
-    }
-    atualizarLinks();
-  }
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        map.classList.add('is-drawn');
-        io.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-  io.observe(map);
+  return `
+    <li class="menu__row rule-bottom">
+      <div class="menu__main">
+        <h3 class="menu__name">${m.nome}</h3>
+        ${m.subtitulo ? `<p class="menu__subtitle">${m.subtitulo}</p>` : ''}
+        <div class="menu__descriptions">${paragraphs}</div>
+      </div>
+      <div class="menu__aside">
+        <div class="menu__options">${opcoesHtml}</div>
+        <a class="menu__cta js-whatsapp" data-service="${m.nome}" href="https://wa.me/${WHATSAPP}">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
+          <span>Agendar pelo WhatsApp</span>
+        </a>
+      </div>
+    </li>`;
 }
 
-/* ---------- Treatments ---------- */
 function setupMenu() {
-  const list = document.querySelector('.menu__list');
-  const nomes = Object.fromEntries(REGIOES.map((r) => [r.id, r.curto]));
-  const rows = MASSAGENS.length
-    ? MASSAGENS.map((m) => `
-        <li class="menu__row rule-bottom">
-          <h3 class="menu__name">${m.nome}</h3>
-          <span class="menu__time">${m.duracao || ''}</span>
-          <span class="menu__price">${m.preco || ''}</span>
-          ${m.descricao ? `<p class="menu__desc">${m.descricao}</p>` : ''}
-          ${(m.regioes || []).length ? `<div class="menu__regions">${m.regioes.map((id) => `<span class="menu__region">${nomes[id] || id}</span>`).join('')}</div>` : ''}
-        </li>`)
-    : [1, 2, 3].map(() => `
-        <li class="menu__row rule-bottom">
-          <h3 class="menu__name">Nome da massagem ${tag()}</h3>
-          <span class="menu__time">— min</span>
-          <span class="menu__price">R$ —</span>
-          <p class="menu__desc">Uma frase sobre a sessão, enviada pelo Flor e Ser.</p>
-        </li>`);
-  list.innerHTML = rows.join('');
+  const container = document.querySelector('.menu__container');
+  if (!container) return;
+
+  container.innerHTML = `<ol class="menu__list rule-top" role="list">${MASSAGENS.map(renderRow).join('')}</ol>`;
+}
+
+/* ---------- Space & Location Tabs + Opening Hours Highlight ---------- */
+function setupLocationAndHours() {
+  const today = new Date().getDay();
+  const row = document.querySelector(`.hours__row[data-day="${today}"]`);
+  if (row) {
+    row.classList.add('is-today');
+    const dt = row.querySelector('dt');
+    if (dt) {
+      const badge = document.createElement('span');
+      badge.className = 'hours__today-badge';
+      badge.textContent = 'Hoje';
+      dt.appendChild(badge);
+    }
+  }
+
+  const tabs = document.querySelectorAll('.space__tab');
+  const setTab = (target) => {
+    tabs.forEach((t) => {
+      const active = t.dataset.tabTarget === target;
+      t.classList.toggle('is-active', active);
+      t.setAttribute('aria-selected', String(active));
+    });
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      setTab(tab.dataset.tabTarget);
+    });
+  });
+
+  const locSection = document.getElementById('localizacao');
+  const spaceSection = document.getElementById('espaco');
+  if (locSection && spaceSection && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          setTab(e.target.id === 'localizacao' ? 'mapa' : 'fotos');
+        }
+      });
+    }, { threshold: 0.35 });
+    io.observe(spaceSection);
+    io.observe(locSection);
+  }
 }
 
 /* ---------- Entrances and mobile dock ---------- */
-// One grammar below the hero: the line is traced first, then the text arrives by light.
 function setupRise() {
   const traced = document.querySelectorAll('.rule-top, .rule-bottom, .credentials, .frame, .close__mark');
-  const texts = document.querySelectorAll('.section-head, .menu__row > *, .about__text, .voices .display, .voice, .space__grid > div, .space__address, .close__inner > :not(.close__mark):not([hidden])');
+  const texts = document.querySelectorAll('.section-head, .menu__group-head, .menu__row > *, .about__text, .voices__header, .voice, .space__top, .location__head, .location__address, .hours, .close__inner > :not(.close__mark):not([hidden])');
   if (reduceMotion || !('IntersectionObserver' in window)) {
     traced.forEach((el) => el.classList.add('is-traced'));
     return;
@@ -237,11 +268,10 @@ function setupDock() {
   const dock = document.querySelector('.dock');
   const hero = document.querySelector('.hero');
   const close = document.querySelector('.close');
-  const panel = document.querySelector('.map-panel');
-  const state = { hero: true, close: false, panel: false };
-  const key = (el) => (el === hero ? 'hero' : el === close ? 'close' : 'panel');
+  const state = { hero: true, close: false };
+  const key = (el) => (el === hero ? 'hero' : 'close');
   const update = () => {
-    const show = !state.hero && !state.close && !state.panel;
+    const show = !state.hero && !state.close;
     dock.classList.toggle('is-visible', show);
     dock.setAttribute('aria-hidden', String(!show));
     dock.tabIndex = show ? 0 : -1;
@@ -250,12 +280,10 @@ function setupDock() {
     entries.forEach((e) => { state[key(e.target)] = e.isIntersecting; });
     update();
   }, { threshold: 0.05 });
-  io.observe(hero);
-  io.observe(close);
-  io.observe(panel);
+  if (hero) io.observe(hero);
+  if (close) io.observe(close);
 
-  // Over the light fields (hero, areia, creme) the dock turns ink so it never dissolves.
-  const light = [...document.querySelectorAll('.hero, .about, .voices, .space')];
+  const light = [...document.querySelectorAll('.hero, .about, .voices, .space, .location')];
   let ticking = false;
   const tone = () => {
     ticking = false;
@@ -268,13 +296,54 @@ function setupDock() {
 }
 
 function setupNote() {
-  if (!WHATSAPP) document.querySelector('.close__note').hidden = false;
+  const note = document.querySelector('.close__note');
+  if (note) note.hidden = Boolean(WHATSAPP);
+}
+
+function setupSmoothNav() {
+  const topbar = document.querySelector('.topbar');
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const hash = link.getAttribute('href');
+      if (!hash || hash === '#') return;
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      e.preventDefault();
+      if (hash === '#topo') {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+        history.pushState(null, '', hash);
+        return;
+      }
+
+      const topbarH = topbar ? topbar.getBoundingClientRect().height : 68;
+      const sectionTop = target.getBoundingClientRect().top + window.scrollY;
+      const sectionH = target.getBoundingClientRect().height;
+      const wrap = target.querySelector('.wrap') || target;
+      const wrapTop = wrap.getBoundingClientRect().top + window.scrollY;
+      const wrapH = wrap.getBoundingClientRect().height;
+      const availH = window.innerHeight - topbarH;
+
+      let scrollTarget = sectionTop;
+      if (wrapH < availH - 32) {
+        // Center the content vertically in the area below the fixed header,
+        // while never scrolling less than sectionTop (so the previous section never peeks above)
+        const centeredY = wrapTop - topbarH - (availH - wrapH) / 2;
+        const maxSectionScroll = sectionTop + Math.max(0, sectionH - window.innerHeight);
+        scrollTarget = Math.min(Math.max(sectionTop, centeredY), Math.max(sectionTop, maxSectionScroll));
+      }
+
+      window.scrollTo({ top: Math.round(scrollTarget), behavior: reduceMotion ? 'auto' : 'smooth' });
+      history.pushState(null, '', hash);
+    });
+  });
 }
 
 setupHero();
-setupMap();
 setupMenu();
+setupLocationAndHours();
 setupNote();
 atualizarLinks();
 setupRise();
 setupDock();
+setupSmoothNav();

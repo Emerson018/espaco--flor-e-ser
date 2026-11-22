@@ -8,64 +8,43 @@ web
 
 ## Stack
 
-Delegado: HTML, CSS e JavaScript estáticos, sem framework. É uma landing page de uma página só; arquivos estáticos carregam rápido no celular, hospedam em qualquer lugar (Netlify, Vercel, GitHub Pages, hospedagem comum) e dão controle total sobre as animações suaves sem peso de bundle. Revisar se o projeto crescer para várias páginas ou blog (Astro seria o próximo passo natural).
+HTML, CSS e JavaScript estáticos, sem framework. Landing page de página única para carregamento rápido no celular e animações vetoriais fluidas.
 
 ## Users
 
-Pessoas que procuram uma massagem e estão decidindo onde agendar. Chegam à página pelo celular na maioria das vezes (link do Instagram, Google, indicação), querem entender rápido quais massagens existem, quanto custam e se podem confiar no(a) profissional, e então marcar um horário.
+Pessoas que procuram massagem e terapias corporais em Porto Alegre e estão decidindo onde agendar. Chegam à página pelo celular ou computador (Instagram, Google Maps, indicação), querem conhecer os procedimentos, ver o espaço, conferir avaliações reais e marcar um horário pelo WhatsApp.
 
 ## Product Purpose
 
-Landing page de um serviço de massagem. O objetivo é transformar visitantes em agendamentos: sucesso é o visitante abrir uma conversa no WhatsApp para marcar um horário.
-
-## Positioning
-
-Em aberto. O diferencial do serviço ainda não foi definido; não inventar um.
+Landing page do **Flor e Ser · Espaço Terapêutico**. O objetivo é transformar visitantes em agendamentos pelo WhatsApp.
 
 ## Operating Context
 
-- Agendamento acontece pelo WhatsApp: a ação principal da página é um botão que abre a conversa.
-- Atendimento em espaço próprio: R. Dr. Timóteo, 383, Porto Alegre, Rio Grande do Sul.
+- **Nome:** Flor e Ser · Espaço Terapêutico
+- **WhatsApp:** `55 51 99298-1851` (`https://wa.me/5551992981851`)
+- **Instagram:** `@espacofloreserpoa` (`https://www.instagram.com/espacofloreserpoa/`)
+- **Google Maps:** `https://maps.app.goo.gl/R5CZ1Vu2cix8McBp9`
+- **Endereço:** R. Dr. Timóteo, 390 - Sala 402 (Velho Armazém Comercial) · Moinhos de Vento, Porto Alegre - RS, 90570-040
+- **Horários de atendimento:**
+  - Segunda a sexta-feira: 09:00–20:00
+  - Sábado: 14:00–18:00
+  - Domingo: Fechado
 
-## Capabilities and Constraints
+## Services
 
-- Nome do serviço: **Lotus**.
-- Número de WhatsApp: ainda não fornecido (o cliente vai mandar depois).
-- A página deve ter animações e movimentos suaves (pedido explícito do cliente).
-
-## Brand Commitments
-
-Paleta de cores definida pelo cliente (vinculante):
-
-| Hex | Nome |
-|---|---|
-| `#2F231B` | Marrom Escuro |
-| `#584333` | Marrom Quente |
-| `#B3704E` | Terracota |
-| `#8B7A66` | Ocre / Bege Escuro |
-| `#C1B097` | Bege Claro / Areia |
-| `#E2D5C3` | Off-white / Creme |
-
-Movimento: animações e transições suaves fazem parte do pedido, não são opcionais.
-
-Idioma do site: português (Brasil).
-
-Vídeo de abertura fornecido pelo cliente (vinculante): `assets/hero.mp4`, 10 s, 1280×720, uma flor de lótus traçada em linha branca luminosa sobre fundo azul-marinho, com partículas. Deve ser a animação de entrada do hero quando a página abre.
+1. Drenagem Linfática
+2. Lipocavitação
+3. Massagem Estética
+4. Massagem Relaxante
+5. Massagem Terapêutica
+6. Protocolos Personalizados
+*(Valores e duração sob consulta; serão adicionados posteriormente).*
 
 ## Evidence on Hand
 
-O cliente confirmou que já tem, mas ainda não enviou para o projeto:
-
-- lista de massagens com preços;
-- fotos próprias;
-- depoimentos reais de clientes;
-- formação / certificações.
-
-Até esse material chegar, usar espaços reservados claramente marcados. Nunca fabricar depoimentos, preços, certificações, nomes de clientes ou números de experiência.
-
-## Product Principles
-
-1. Agendar é o objetivo: o caminho até o WhatsApp precisa estar sempre a um toque, especialmente no celular.
-2. Confiança vem de material real: fotos, depoimentos e formação verdadeiros, nunca genéricos ou inventados.
-3. Clareza antes de decisão: tipos de massagem, duração e preço visíveis sem esforço.
-4. A calma do serviço aparece na experiência: o movimento é suave e ajuda a leitura, nunca atrasa ou atrapalha o agendamento.
+- **Foto de quem atende:** `fotos/quem-atende.webp`
+- **Fotos do espaço:** 5 fotos reais na pasta `fotos/` (`download (1).webp` a `download (5).webp`)
+- **Avaliações reais do Google Maps (Nota 5,0 ★):**
+  1. Apollyana Viana de Andrade (5★)
+  2. Vanessa Etges (5★)
+  3. Jacqueline Leal Salerno (5★)
