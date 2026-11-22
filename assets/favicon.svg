@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#2F231B"/><g transform="translate(0 8)" fill="none" stroke="#E2D5C3" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21 C17 16 17 8 20 2 C23 8 23 16 20 21Z"/><path d="M20 21 C15 18 11 12 11 6 C16 8 19 13 20 21Z"/><path d="M20 21 C25 18 29 12 29 6 C24 8 21 13 20 21Z"/><path d="M20 21 C13 21 6 17 2 13 C9 12 16 15 20 21Z"/><path d="M20 21 C27 21 34 17 38 13 C31 12 24 15 20 21Z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <rect width="40" height="40" rx="10" fill="#FAF6F8"/>
+  <path d="M19.5 7.2A4.5 4.5 0 1 0 24.8 13a3.7 3.7 0 1 1-5.3-5.8Z" fill="#E6C35C"/>
+  <path d="M12 28C7 26.5 4 24 2.5 22c3.5-.5 7 1 9.5 6Z" fill="#7D9B81"/>
+  <path d="M28 28c5-1.5 8-4 9.5-6-3.5-.5-7 1-9.5 6Z" fill="#7D9B81"/>
+  <g stroke="#2C122A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 29c-6 0-12-3.5-15-8 5.5-.8 11.5 2.2 15 8Z" fill="#C98FB9"/>
+    <path d="M20 29c6 0 12-3.5 15-8-5.5-.8-11.5 2.2-15 8Z" fill="#C98FB9"/>
+    <path d="M20 29c-4.5-2.5-8.5-8.5-8.5-14 4.5 1.8 7.5 6.5 8.5 14Z" fill="#F3D5CA"/>
+    <path d="M20 29c4.5-2.5 8.5-8.5 8.5-14-4.5 1.8-7.5 6.5-8.5 14Z" fill="#F3D5CA"/>
+    <path d="M20 29c-2.6-4.5-2.6-11.5 0-16.5 2.6 5 2.6 12 0 16.5Z" fill="#D7A5CA"/>
+  </g>
+</svg>

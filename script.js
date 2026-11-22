@@ -1,12 +1,12 @@
 /* =====================================================================
-   Lotus — conteúdo editável
+   Flor e Ser · Espaço Terapêutico — conteúdo editável
    ===================================================================== */
 
 // Número do WhatsApp com DDI e DDD, só dígitos. Ex.: '5551999999999'.
 // Vazio = os botões abrem o WhatsApp sem destinatário e aparece um aviso.
 const WHATSAPP = '';
 
-// Lista de massagens. Preencha com os dados reais da Lotus.
+// Lista de massagens. Preencha com os dados reais do Flor e Ser.
 // `regioes` liga a massagem às partes do mapa do corpo:
 // cabeca, ombros, costas, bracos, lombar, pernas, pes
 // Exemplo de formato (não é dado real):
@@ -33,7 +33,7 @@ const REGIOES = [
 
 /* ===================================================================== */
 
-const BASE_MSG = 'Olá! Gostaria de agendar uma massagem na Lotus.';
+const BASE_MSG = 'Olá! Gostaria de agendar uma massagem no Flor e Ser.';
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const root = document.documentElement;
 let escolha = null;
@@ -66,85 +66,29 @@ function tag() {
   return '<span class="tag-provisorio">provisório</span>';
 }
 
-/* ---------- Hero intro: copy arrives when the lotus is drawn ---------- */
+/* ---------- Hero intro: lotus emblem traces & blooms, then copy arrives ---------- */
 function setupHero() {
-  const video = document.querySelector('.hero__video');
   let bloomed = false;
   const bloom = () => {
     if (bloomed) return;
     bloomed = true;
-    root.classList.add('is-bloomed');
-  };
-  const holdFinalFrame = () => {
-    const seek = () => { try { video.currentTime = Math.max(0, video.duration - 0.4); } catch (e) {} };
-    if (video.readyState >= 1) seek(); else video.addEventListener('loadedmetadata', seek, { once: true });
+    root.classList.add('is-drawing', 'is-bloomed');
   };
 
   if (reduceMotion) {
-    holdFinalFrame();
     bloom();
     return;
   }
 
-  video.addEventListener('timeupdate', () => { if (video.currentTime >= 2.1) bloom(); });
-  video.addEventListener('error', () => bloom());
-  // Once playback starts, the copy follows the drawing; if the film is slow to arrive, never hold the page.
-  video.addEventListener('playing', () => setTimeout(bloom, 2600), { once: true });
-  const p = video.play();
-  if (p && p.catch) p.catch(() => { holdFinalFrame(); bloom(); });
-  setTimeout(bloom, 3400);
+  // Trigger the stroke-drawing & petal-unfurling choreography on next frame
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      root.classList.add('is-drawing');
+    });
+  });
 
-  setupLightLoop(video, document.querySelector('.hero__video--relay'));
-}
-
-/* The lotus is drawn once. After that, its lights keep moving forever: two copies of the
-   film take turns playing the light phase (flower complete, particles drifting) and
-   cross-fade into each other, so the drawing never restarts and nothing jumps. */
-const LIGHT_PHASE_START = 3.4; // s: the flower is fully drawn from here on
-const HANDOFF_LEAD = 1.8;      // s before the end where the next copy takes over
-const FADE_MS = 1600;          // matches .hero__video opacity transition
-
-function setupLightLoop(first, second) {
-  if (!second) return;
-  let active = first;
-  let resting = second;
-  let handingOff = false;
-
-  const handOff = () => {
-    handingOff = true;
-    const next = resting;
-    const prev = active;
-    const start = () => {
-      // The incoming copy fades in on top while the outgoing one stays fully lit underneath,
-      // so the flower never dims mid-fade.
-      next.style.zIndex = '2';
-      prev.style.zIndex = '1';
-      next.classList.remove('is-resting');
-      setTimeout(() => {
-        prev.classList.add('is-resting');
-        prev.pause();
-        active = next;
-        resting = prev;
-        handingOff = false;
-      }, FADE_MS + 100);
-    };
-    try { next.currentTime = LIGHT_PHASE_START; } catch (e) {}
-    const playing = next.play();
-    if (playing && playing.then) playing.then(start, () => { handingOff = false; });
-    else start();
-  };
-
-  const watch = () => {
-    const v = active;
-    if (!handingOff && v.duration && !v.paused && v.currentTime >= v.duration - HANDOFF_LEAD) handOff();
-    requestAnimationFrame(watch);
-  };
-  requestAnimationFrame(watch);
-
-  // If a copy still reaches its end (a throttled background tab), carry on from the light phase.
-  [first, second].forEach((v) => v.addEventListener('ended', () => {
-    if (v === active && !handingOff) handOff();
-  }));
+  // Reveal the brand title lockup ("Flor e Ser · Espaço Terapêutico") and actions as the flower finishes blooming
+  setTimeout(bloom, 1350);
 }
 
 /* ---------- Body map ---------- */
@@ -207,7 +151,7 @@ function setupMap() {
           </div>`).join('')
       : `<div class="map-panel__rx">
             <span class="map-panel__rx-label">Massagem indicada</span>
-            <span class="map-panel__rx-name">Entra aqui a massagem da Lotus para essa região ${tag()}</span>
+            <span class="map-panel__rx-name">Entra aqui a massagem do Flor e Ser para essa região ${tag()}</span>
             <span class="map-panel__rx-meta">Duração · valor</span>
           </div>`;
 
@@ -263,7 +207,7 @@ function setupMenu() {
           <h3 class="menu__name">Nome da massagem ${tag()}</h3>
           <span class="menu__time">— min</span>
           <span class="menu__price">R$ —</span>
-          <p class="menu__desc">Uma frase sobre a sessão, enviada pela Lotus.</p>
+          <p class="menu__desc">Uma frase sobre a sessão, enviada pelo Flor e Ser.</p>
         </li>`);
   list.innerHTML = rows.join('');
 }
@@ -310,8 +254,8 @@ function setupDock() {
   io.observe(close);
   io.observe(panel);
 
-  // Over the light fields (areia, creme) the dock turns ink so it never dissolves.
-  const light = [...document.querySelectorAll('.about, .voices, .space')];
+  // Over the light fields (hero, areia, creme) the dock turns ink so it never dissolves.
+  const light = [...document.querySelectorAll('.hero, .about, .voices, .space')];
   let ticking = false;
   const tone = () => {
     ticking = false;

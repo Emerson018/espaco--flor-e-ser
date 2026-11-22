@@ -1,0 +1,13 @@
+{
+  "name": "lotus-landing",
+  "version": "1.0.0",
+  "description": "Lotus · Massagem em Porto Alegre",
+  "scripts": {
+    "start": "serve -l 8080",
+    "dev": "serve -l 8080"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.8"
+  }
+}
