@@ -685,7 +685,7 @@ section[id] { scroll-margin-top: 0; }
 .map-panel .btn { justify-self: start; margin-top: .4rem; }
 
 @media (max-width: 900px) {
-  .map__stage { grid-template-columns: 1fr; }
+  .map__stage { grid-template-columns: minmax(0, 1fr); }
   .body-map { width: min(100%, 34rem); }
   .map-panel { min-height: 0; scroll-margin-bottom: 6rem; }
 }
@@ -811,13 +811,13 @@ section[id] { scroll-margin-top: 0; }
   }
 }
 @media (max-width: 780px) {
-  .menu__row { grid-template-columns: 1fr; }
+  .menu__row { grid-template-columns: minmax(0, 1fr); }
   .menu__aside { justify-items: start; text-align: left; }
   .menu__option { justify-content: flex-start; }
 }
 
 /* ---------- Frames (photo & map slots) ---------- */
-.frame { position: relative; margin: 0; border-radius: 1.25rem; overflow: hidden; background: rgba(43, 24, 40, 0.06); }
+.frame { position: relative; width: 100%; max-width: 100%; margin: 0; border-radius: 1.25rem; overflow: hidden; background: rgba(43, 24, 40, 0.06); }
 .frame__img {
   width: 100%;
   height: 100%;
@@ -864,7 +864,7 @@ section[id] { scroll-margin-top: 0; }
 .credentials__line { width: 1.8rem; height: 1px; background: var(--earth); flex: none; }
 @media (max-width: 760px) {
   .about { min-height: 0; padding: calc(4.35rem + 2rem) 0 4rem; }
-  .about__grid { grid-template-columns: 1fr; }
+  .about__grid { grid-template-columns: minmax(0, 1fr); }
   .frame--portrait { max-width: 24rem; max-height: none; margin-inline: auto; width: 100%; }
 }
 
@@ -942,7 +942,7 @@ section[id] { scroll-margin-top: 0; }
 .voice footer strong { color: var(--ink); font-weight: 600; }
 .voice footer span { font-size: .82rem; opacity: .82; }
 @media (max-width: 960px) {
-  .voices__row { grid-template-columns: 1fr; }
+  .voices__row { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------- Space (O espaço — Photo Gallery) ---------- */
@@ -1130,9 +1130,13 @@ section[id] { scroll-margin-top: 0; }
 /* Google Map Interactive Box */
 .location__map-box {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 1rem;
+  width: 100%;
+  min-width: 0;
 }
 .frame--map {
+  width: 100%;
   aspect-ratio: 4 / 3.6;
   min-height: 25rem;
   max-height: calc(100svh - 8rem);
@@ -1184,9 +1188,15 @@ section[id] { scroll-margin-top: 0; }
 
 @media (max-width: 900px) {
   .location { min-height: 0; }
-  .location__grid { grid-template-columns: 1fr; }
+  .location__grid { grid-template-columns: minmax(0, 1fr); }
+  .location__info { min-width: 0; }
   .location__map-box { position: static; }
-  .frame--map { min-height: 20rem; max-height: none; aspect-ratio: 4 / 3; }
+  .frame--map {
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    height: clamp(14rem, 54vw, 17.5rem);
+  }
   .location__map-card { flex-direction: column; align-items: flex-start; }
 }
 

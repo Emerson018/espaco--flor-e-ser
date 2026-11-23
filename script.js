@@ -186,7 +186,7 @@ function renderRow(m) {
         <div class="menu__options">${opcoesHtml}</div>
         <a class="menu__cta js-whatsapp" data-service="${m.nome}" href="https://wa.me/${WHATSAPP}">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg>
-          <span>Agendar pelo WhatsApp</span>
+          <span>Agendar</span>
         </a>
       </div>
     </li>`;
